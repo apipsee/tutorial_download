@@ -1,0 +1,596 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, rgba(155, 43, 180, 0.3), transparent 38%),
+    linear-gradient(180deg, #07070b 0%, #121218 35%, #050509 100%);
+  color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+.container {
+  width: min(100%, 600px);
+  margin: 32px auto;
+  padding: 28px 20px 18px;
+}
+
+/* =========================================
+   PROFILE SECTION
+========================================= */
+.profile {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.65s ease forwards;
+}
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 7vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-actions {
+  margin-top: 8px;
+}
+
+.profile .me-button {
+  display: flex;
+  grid-template-columns: none;
+  width: auto;
+  min-height: 42px;
+  margin: 12px 0 0;
+  padding: 0 12px;
+  gap: 0;
+  border: 1px solid rgba(155, 43, 180, 0.9);
+  border-radius: 999px;
+  background: rgba(155, 43, 180, 0.22);
+  box-shadow: 0 0 8px rgba(155, 43, 180, 0.62), inset 0 0 8px rgba(155, 43, 180, 0.2);
+  animation: none;
+}
+
+.profile .me-button:hover,
+.profile .me-button:focus-visible {
+  background: rgba(155, 43, 180, 0.38);
+  border-color: #9B2BB4;
+  box-shadow: 0 0 12px rgba(155, 43, 180, 0.78), inset 0 0 10px rgba(155, 43, 180, 0.28);
+}
+
+.profile .me-button i {
+  display: none;
+}
+
+.profile .me-button span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.profile .home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: auto;
+  min-width: 76px;
+  height: 27px;
+  margin: 0;
+  padding: 0 10px;
+  border: 1px solid rgba(155, 43, 180, 0.9);
+  border-radius: 999px;
+  background: rgba(155, 43, 180, 0.22);
+  box-shadow: 0 0 8px rgba(155, 43, 180, 0.62), inset 0 0 8px rgba(155, 43, 180, 0.2);
+  color: #fff;
+  text-decoration: none;
+  animation: none;
+}
+
+.profile .home-button:hover,
+.profile .home-button:focus-visible {
+  background: rgba(155, 43, 180, 0.38);
+  border-color: #9B2BB4;
+  box-shadow: 0 0 12px rgba(155, 43, 180, 0.78), inset 0 0 10px rgba(155, 43, 180, 0.28);
+}
+
+.profile .home-button span {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.profile .sosmed-button {
+  display: flex;
+  grid-template-columns: none;
+  width: auto;
+  min-height: 42px;
+  margin: 12px 0 0;
+  padding: 0 14px;
+  border: 1px solid rgba(155, 43, 180, 0.9);
+  border-radius: 999px;
+  background: rgba(155, 43, 180, 0.22);
+  box-shadow: 0 0 8px rgba(155, 43, 180, 0.62), inset 0 0 8px rgba(155, 43, 180, 0.2);
+  animation: none;
+}
+
+.profile .sosmed-button:hover,
+.profile .sosmed-button:focus-visible {
+  background: rgba(155, 43, 180, 0.38);
+  border-color: #9B2BB4;
+  box-shadow: 0 0 12px rgba(155, 43, 180, 0.78), inset 0 0 10px rgba(155, 43, 180, 0.28);
+}
+
+.profile .sosmed-button span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.profile .other-button {
+  display: flex;
+  grid-template-columns: none;
+  width: auto;
+  min-height: 42px;
+  margin: 12px 0 0;
+  padding: 0 14px;
+  border: 1px solid rgba(155, 43, 180, 0.9);
+  border-radius: 999px;
+  background: rgba(155, 43, 180, 0.22);
+  box-shadow: 0 0 8px rgba(155, 43, 180, 0.62), inset 0 0 8px rgba(155, 43, 180, 0.2);
+  animation: none;
+}
+
+.profile .other-button:hover,
+.profile .other-button:focus-visible {
+  background: rgba(155, 43, 180, 0.38);
+  border-color: #9B2BB4;
+  box-shadow: 0 0 12px rgba(155, 43, 180, 0.78), inset 0 0 10px rgba(155, 43, 180, 0.28);
+}
+
+.profile .other-button span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.section-divider {
+  width: min(100%, 220px);
+  height: 2px;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(155, 43, 180, 0),
+    rgba(155, 43, 180, 1),
+    rgba(155, 43, 180, 0)
+  );
+  box-shadow: 0 0 14px rgba(155, 43, 180, 0.42);
+}
+
+.catalog-divider {
+  margin-top: 18px;
+}
+
+.section-label {
+  margin-top: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.other-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.final-divider {
+  margin-top: 18px;
+}
+
+.only-me {
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+.only-me-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.apk-links,
+.product-links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.apk-links .social-button,
+.product-links .social-button {
+  background: #9B2BB4;
+  border-color: #9B2BB4;
+}
+
+.apk-links .social-button:hover,
+.apk-links .social-button:focus-visible,
+.product-links .social-button:hover,
+.product-links .social-button:focus-visible {
+  background: #9B2BB4;
+  border-color: #9B2BB4;
+}
+
+.download-guide-link {
+  margin: 0 0 24px;
+}
+
+.download-guide .guide-header {
+  text-align: center;
+}
+
+.download-guide .guide-back {
+  display: inline-flex;
+  width: auto;
+  min-height: 42px;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+}
+
+.download-guide .guide-header h1 {
+  font-size: clamp(2rem, 7vw, 3rem);
+}
+
+.download-guide .guide-header p,
+.guide-note {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.guide-section {
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid rgba(155, 43, 180, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.guide-section h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.guide-section ol {
+  margin: 0;
+  padding-left: 22px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.guide-section li + li {
+  margin-top: 8px;
+}
+
+.guide-note {
+  margin: 20px 0 0;
+  font-size: 0.9rem;
+}
+
+
+.profile-description {
+  margin: 8px 0 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+.social-wrapper {
+  margin-top: 20px;
+  margin-bottom: 18px;
+}
+
+.apk-wrapper {
+  margin-top: 32px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-button {
+  display: grid;
+  grid-template-columns: 24px auto;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 60px;
+  padding: 14px 18px;
+  background: #9B2BB4;
+  border: 1px solid #9B2BB4;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: buttonEntryBounce 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-button:nth-child(1) { animation-delay: 0.08s; }
+.social-button:nth-child(2) { animation-delay: 0.14s; }
+.social-button:nth-child(3) { animation-delay: 0.20s; }
+.social-button:nth-child(4) { animation-delay: 0.26s; }
+.social-button:nth-child(5) { animation-delay: 0.32s; }
+
+.social-button:hover,
+.social-button:focus-visible {
+  transform: translateY(-2px);
+  background: #9B2BB4;
+  border-color: #9B2BB4;
+}
+
+.social-button:active {
+  transform: scale(0.98);
+}
+
+.social-button:focus-visible {
+  outline: 2px solid #9B2BB4;
+  outline-offset: 4px;
+}
+
+.social-button i,
+.social-button .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 1;
+  color: rgba(155, 43, 180, 0.95);
+  flex-shrink: 0;
+}
+
+.social-button .social-icon {
+  object-fit: contain;
+}
+
+.social-button span {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================
+   PAGE ENTRANCE ANIMATIONS
+========================================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonEntryBounce {
+  0% {
+   opacity: 1;
+   transform: translateY(0) scale(1);
+  }
+
+  30% {
+   transform: translateY(-6px) scale(1.02);
+  }
+
+  60% {
+   transform: translateY(2px) scale(0.995);
+  }
+
+  100% {
+   opacity: 1;
+   transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   CLICK BOUNCE ANIMATION
+========================================= */
+@keyframes buttonBounce {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(0.96);
+  }
+
+  60% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.social-button.bounce {
+  animation: buttonBounce 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-button,
+  .social-button.bounce {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.site-footer {
+  margin-top: 22px;
+  padding-top: 12px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 14px;
+  }
+
+  .container {
+    margin: 0;
+    width: 100%;
+    padding: 24px 16px 16px;
+  }
+
+  .profile-image {
+    width: 136px;
+    height: 136px;
+  }
+
+  .social-button {
+    min-height: 58px;
+    padding: 12px 14px;
+  }
+}
+
+/* Glass surfaces with bright, readable labels. */
+.social-button,
+.apk-links .social-button,
+.product-links .social-button,
+.profile .me-button,
+.profile .home-button,
+.profile .sosmed-button,
+.profile .other-button {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(112, 24, 132, 0.32));
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow:
+    0 18px 32px rgba(0, 0, 0, 0.42),
+    0 5px 12px rgba(0, 0, 0, 0.24),
+    0 0 18px rgba(155, 43, 180, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.social-button:hover,
+.social-button:focus-visible,
+.apk-links .social-button:hover,
+.apk-links .social-button:focus-visible,
+.product-links .social-button:hover,
+.product-links .social-button:focus-visible,
+.profile .me-button:hover,
+.profile .me-button:focus-visible,
+.profile .home-button:hover,
+.profile .home-button:focus-visible,
+.profile .sosmed-button:hover,
+.profile .sosmed-button:focus-visible,
+.profile .other-button:hover,
+.profile .other-button:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.23), rgba(112, 24, 132, 0.48));
+  border-color: rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 24px 40px rgba(0, 0, 0, 0.5),
+    0 8px 18px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(155, 43, 180, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.16);
+  transform: translateY(-3px);
+}
+
+.social-button i,
+.social-button .social-icon {
+  color: #f2c7ff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+}
+
+.social-button span {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.guide-section {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(112, 24, 132, 0.12));
+  box-shadow:
+    0 20px 38px rgba(0, 0, 0, 0.36),
+    0 6px 14px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.14);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.guide-section:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 26px 44px rgba(0, 0, 0, 0.42),
+    0 8px 18px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.12);
+}
